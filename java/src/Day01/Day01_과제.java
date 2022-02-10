@@ -29,5 +29,29 @@ public class Day01_과제 {
 	 * 유재석		출석		결석		출석 
 	 * --------------------------------------
 	 */
+	
+	
+	public static void main(String[] args) {
+		
+		// 2. console 아래 모양 출력
+		System.out.println("\\    /\\");
+		System.out.println(" )  (  ')");
+		System.out.println("(  /   )");
+		System.out.println(" \\ (__)|");		// | : 스프트+원화기호
+		
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
