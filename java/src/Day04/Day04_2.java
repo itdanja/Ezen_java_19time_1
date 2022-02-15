@@ -1,5 +1,7 @@
 package Day04;
 
+import java.util.Scanner;
+
 public class Day04_2 { // c s
 
 	public static void main(String[] args) { // m s 
@@ -67,11 +69,29 @@ public class Day04_2 { // c s
 		else System.out.println( "예5) true 없다.");
 		
 		// 문제1) 점수1를 입력받아 점수가 90점 이상이면 합격 아니면 불합격 출력 
+			// 1. 키보드로부터 입력받는다. 
+		Scanner scanner = new Scanner(System.in); // 1. 입력객체
+			// 2. 입력받은 값을 가져와서 변수에 저장 
+		System.out.print("점수 입력 : "); // 입력 안내
+		int 점수1 = scanner.nextInt(); // 2. 입력값을 변수에 저장 
+			// 3. 비교/제어
+		if( 점수1 >= 90 ) System.out.println("합격입니다."); // 3. 비교결과 참일경우 
+		else { System.out.println("불합격입니다."); }   // 3.비교결과 거짓일경우
+			// 4. 출력한다
 		
 		// 문제2) 점수2를 입력받아 점수가 90점 이상이면 A등급
 		//						점수가 80점 이상이면 B등급
 		//						점수가 70점 이상이면 C등급
 		//						그외 재시험
+			// 1. 키보드로부터 입력받는다. [ 위에 scanner 객체가 존재하니 생략 ] 
+			// 2. 입력받은 값을 가져와서 변수에 저장 
+		System.out.print("점수 입력 : "); // 입력할 내용이 무엇인지 안내출력 
+		int 점수2 = scanner.nextInt(); // 2.입력값을 변수에 저장한다.
+			// 3. 비교 / 제어 후 출력
+		if( 점수2 >= 90 ) { System.out.println("A등급"); }
+		else if( 점수2 >=80 ) {System.out.println("B등급");}
+		else if( 점수2 >=70 ) {System.out.println("C등급");}
+		else { System.out.println("재시험"); }
 		
 		
 		
