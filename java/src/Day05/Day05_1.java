@@ -104,6 +104,50 @@ public class Day05_1 { //cs
 		
 		// break : 가장 가까운 { } 종료[나가기]
 	
+		// 예2_p143. : break 없는 case 는 다음 case 이동 ~
+		
+		// 예3_p143 : 문자 
+		char grade = 'B';
+		switch(grade) {
+			case 'A' : 	// 만약에 'A' 이면 다음 case 이동 [ break 없기 때문에 ]
+			case 'a' : 	System.out.println("우수회원"); 	break;
+			case 'B' :	// 만약에 'B' 이면 다음 case 이동 [ break 없기 때문에 ]
+			case 'b' :	System.out.println("일반회원");	break;
+			default : 	System.out.println("손님");
+		}
+		
+		// 예4_p144 : 문자열 
+		String position = "과장";
+		switch( position ) {
+			case "부장" : 	System.out.println("700만원"); 	break;
+			case "과장" :		System.out.println("500만원");	break;
+			default :		System.out.println("300만원");	break;
+		}
+		
+		// 문제1 : 점수를 2개를 입력받아 2개점수의 평균이 90점이상이면 A
+		//										80점이상이면 B
+		//										70점이상이면 C
+		//										그외 탈락 
+		
+		System.out.print(" 점수1 : "); int 점수1 = scanner.nextInt();
+		System.out.print(" 점수2 : "); int 점수2 = scanner.nextInt();
+		int 평균 = (점수1+점수2)/2; // 평균 구하기
+		System.out.println(" 평균은 : " + 평균 );
+		
+		// 문제1_ IF
+		if( 평균 >= 90 ) { System.out.println("A등급입니다."); }
+		else if( 평균 >= 80 ) { System.out.println("B등급입니다."); }
+		else if( 평균 >=70 ) { System.out.println("C등급입니다."); }
+		else { System.out.println("탈락입니다."); }
+		
+		// 문제1_ switch
+		switch( 평균/10 ) {
+			case 9 :	System.out.println("A등급입니다.");	break;
+			case 8 :	System.out.println("B등급입니다.");	break;
+			case 7 :	System.out.println("C등급입니다.");	break;
+			default : 	System.out.println("탈락입니다.");
+		}
+		
 		
 		
 		
