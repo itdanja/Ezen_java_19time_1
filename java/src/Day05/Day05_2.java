@@ -36,12 +36,12 @@ public class Day05_2 {
 		int sum = 0;	// * 누적합계를 저장할 상자(변수) 
 		
 		while( j<=100 ) { // 2. 반복문 실행 조건 [ true 실행 아니면 불가 ]
+			
 			System.out.println("현재 j의 값은 : " + j);
 			sum = sum + j;  // sum += j		// 누적합계 구하는 식  
 			j++; // 3. 증감식 [ j를 1씩 증가 시킨다 ] 
-		} // w e 
-		
-		// while 이 끝나는 조건은 J 가 101일때 종료 
+			
+		} // w e // while 이 끝나는 조건은 J 가 101일때 종료 
 		
 		System.out.println("1~100까지의 누적합 : " + sum );
 		
@@ -58,12 +58,9 @@ public class Day05_2 {
 			// 2. 조건 
 			if( 종료.equals("q") || 종료.equals("Q") ) { // 만약에 입력한 값이 Q 혹은 q 이면 
 				break; // 가장 가까운 반복문 혹은 switch의 { } 탈출
-			}
+			}  // i e 
 			
-		} // w e 
-		
-		// while이 종료되는 경우는 q 혹은 Q 을 입력했을때만 종료 
-		
+		} // w e   // while이 종료되는 경우는 q 혹은 Q 을 입력했을때만 종료 
 	} // me 
 } // ce
 
