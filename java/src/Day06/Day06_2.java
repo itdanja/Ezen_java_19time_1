@@ -30,9 +30,96 @@ public class Day06_2 {
 		
 		// 3. 입력받은 줄 만큼 출력 // 1. 줄 반복문 2. 별 반복문 
 		System.out.print(" 문제3 줄수 : "); int s3 = scanner.nextInt();
-		for( int i = 1 ; i<=s3 ; i++ ) {
-			System.out.println("줄바꿈");
+		
+		for( int i = 1 ; i<=s3 ; i++ ) { // for1 : 줄수 반복처리 반복문 
+			// 별찍기 
+			for( int s = 1 ; s<= i ; s++ ) {	// for2 : 줄마다 반복처리 반복문
+				// s는 1부터 현재 줄까지  1씩 증가 
+				System.out.print("*");
+			}
+			// 줄바꿈 
+			System.out.println("");
 		}
+		
+		System.out.println("\n---------------------\n");
+		
+		// 4. 
+		System.out.print(" 문제4 줄수 : "); int s4 = scanner.nextInt();
+		
+		for( int i = 1 ; i<=s4; i++ ) {
+			
+			//별찍기 
+			for( int s = 1 ; s<=s4-i+1 ; s++ ) {
+				System.out.print("*");
+			}
+			// 줄바꿈
+			System.out.println();
+		}
+		
+		System.out.println("\n---------------------\n");
+		
+		// 5. 
+		System.out.print(" 문제5 줄수 : "); int s5 = scanner.nextInt();
+		for( int i = 1 ; i<=s5; i++ ) {
+			
+			// 공백찍기 
+			for( int b = 1 ; b<=s5-i ; b++ ) {
+				System.out.print(" "); // 스페이스 1개 => 공백
+			}
+			// 별찍기 
+			for( int s = 1 ; s<=i ; s++ ) { System.out.print("*"); 
+			}
+			// 줄바꿈
+			System.out.println( );
+		}
+		
+		System.out.println("\n---------------------\n");
+		
+		// 6. 
+		System.out.print(" 문제6 줄수 : "); int s6 = scanner.nextInt();
+		
+		for( int i = 1 ; i<=s6 ; i++ ) {
+			
+			// 공백찍기 
+			for( int b = 1 ; b<=i-1 ; b++ ) { 
+				System.out.print(" ");
+			}
+			// 별찍기 
+			for( int s = 1 ; s<=s6-i+1 ; s++ ) {
+				System.out.print("*");
+			}
+			// 줄바꿈
+			System.out.println();
+			
+		}
+		
+		System.out.println("\n---------------------\n");
+		
+		// 7. 
+		System.out.print(" 문제7 줄수 : "); int s7 = scanner.nextInt();
+		for( int i = 1 ; i<=s7 ; i++ ) {
+			// 공백찍기
+			for( int b = 1 ; b<=s7-i ; b++ ) {
+				System.out.print(" ");
+			}
+			// 별찍기 
+			for( int s = 1 ; s<= i*2-1 ; s++) {
+				System.out.print("*");
+			}
+			// 줄바꿈
+			System.out.println();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
