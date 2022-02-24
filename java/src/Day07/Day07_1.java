@@ -98,6 +98,30 @@ public class Day07_1 {
 					학생점수목록[i] = scanner.nextInt(); // i 번째 인덱스에 점수를 저장하기.
 				}
 			}else if( 선택 == 3 ) {
+				// 배열 정렬 [ 내림차순 ] 
+				for( int i =0 ; i<학생점수목록.length ; i++) {
+						// i : 비교기준 
+					for( int j = i+1 ; j<학생점수목록.length ; j++ ) {
+						// j : 비교대상[ 비교기준의 다음과 비교 시작 ] 
+						
+						if( 학생점수목록[i] < 학생점수목록[j] ) {
+							// 비교기준 < 비교대상   => 스왑[교체]
+							int temp = 학생점수목록[i];
+							학생점수목록[i] = 학생점수목록[j];
+							학생점수목록[j] = temp;
+						}
+					}
+				}
+				// 출력
+				int 총합 = 0;
+				for( int i = 0 ; i<학생점수목록.length ; i++ ) {
+					System.out.println( i+"등 점수 : " + 학생점수목록[i] );
+					총합 += 학생점수목록[i];
+				}
+				System.out.println(" 총합 점수 : " + 총합);
+				System.out.println(" 평균 점수 : " + (총합/학생점수목록.length) );
+				
+				
 			}else if( 선택 == 4 ) {
 				System.out.println(" >> 종료 ");
 				break; // 가장 가까운 반복문 괄호 탈출 
