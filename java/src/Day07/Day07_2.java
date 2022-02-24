@@ -1,5 +1,6 @@
 package Day07;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Day07_2 {
@@ -61,11 +62,44 @@ public class Day07_2 {
 		}
 		
 		// 2. 컴퓨터가 6개에 수를 난수생성 해서 배열에 저장.
+		System.out.println("----------- 추첨 번호 생성 목록 ----------");
+		for( int i = 0 ; i<random.length; i++) { //  1번 for 
+			Random ran = new Random();	// 랜덤 객체 
+			// random[i] = ran.nextInt(45); // 0 ~ 44 까지 난수 생성 
+			int randomnum = ran.nextInt(45)+1;	// 1 ~ 45 까지 난수 생성 
+			
+			boolean 통과 = true;
+			for( int j = 0 ; j<random.length; j++ ) { // 2번 for 
+				if( randomnum == random[j] ) {
+					// 새로운 난수 == j번쨰 난수와 같으면
+					i--;
+					통과 = false;
+					break; // break 기준으로 가장 가까운 반복문 {} 탈출
+				}
+			}
+			if( 통과 ) random[i] = randomnum;
+		}
+		
+		// 2-1 확인 
+		for( int i = 0 ; i<random.length; i++ ) {
+			System.out.println( (i+1) + " 번째 당첨번호 : "+ random[i]);
+		}
 		
 		// 3. 두 배열을 비교해서 동일한 수 개수 체크.
-		
-		
-		
+		int 당첨번호수 = 0;
+		for( int i = 0 ; i<number.length ; i++) {
+			// i : 비교기준
+			for( int j = 0 ; j<random.length ; j++) {
+				// j : 비교대상
+				if( number[i] == random[j] ) {
+					// 비교기준 과 비교대상이 동일하면 
+					당첨번호수++; // 당첨번호수 를 1 증가 
+				}
+			}
+		}
+		// 4. 결과 
+		System.out.println(" ---------------- 추첨 결과 -------------");
+		System.out.println(" 총 당첨된 번호 개수 : " + 당첨번호수 );
 		
 	} // main end 
 } // class end 
