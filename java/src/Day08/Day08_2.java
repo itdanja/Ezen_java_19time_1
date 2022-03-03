@@ -56,9 +56,9 @@ public class Day08_2 {
 					if( memberlist[i] !=null &&
 							memberlist[i].id.equals(id) && 
 							memberlist[i].password.equals(password) ) {
-						// 1. 배열내 공백이 아니면 [ 공백은 비교할수 없다. equals 불가 ]
-						// 2. 배열내 객체내 id가 입력받은 id와 같으면 
-						// 3. 배열내 객체내 password가 입력받은 passowrd와 같으면 
+						// 1. 배열내 i번째 인덱스 객체가 공백이 아니면 [ 공백은 비교할수 없다. equals 불가 ]
+						// 2. 배열내 i번째 인덱스 객체가 id가 입력받은 id와 같으면 
+						// 3. 배열내 i번째 인덱스 객체가 password가 입력받은 passowrd와 같으면 
 						System.out.println(" 알림] 로그인성공 ");
 						break;
 					}
