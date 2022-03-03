@@ -51,11 +51,22 @@ public class Day08_2 {
 				System.out.println(">>>>> 로그인 페이지 >>>>>>");
 				System.out.print(" 아이디 : ");	String id = scanner.next();
 				System.out.print(" 비밀번호 : ");	String password = scanner.next();
+				// 배열내 동일한 id와 password 찾기 
+				for( int i = 0 ; i<memberlist.length ; i++) {
+					if( memberlist[i] !=null &&
+							memberlist[i].id.equals(id) && 
+							memberlist[i].password.equals(password) ) {
+						// 1. 배열내 공백이 아니면 [ 공백은 비교할수 없다. equals 불가 ]
+						// 2. 배열내 객체내 id가 입력받은 id와 같으면 
+						// 3. 배열내 객체내 password가 입력받은 passowrd와 같으면 
+						System.out.println(" 알림] 로그인성공 ");
+						break;
+					}
+				}
 			}
 			else {
 				System.out.println(" 알림] 알수없는 행동 입니다.");
 			}
-			
 			
 		}// while end 
 	}// main end 
