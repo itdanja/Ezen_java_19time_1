@@ -19,8 +19,19 @@ public class Day09_3 {
 		myCalc.powerOn(); // 객체명.메소드명();
 			//* myCalc 객체내 메소드 호출 
 		
-		int result1 = myCalc.plus(5, 6);
+		// 3. plus 메소드 호출 
+		int result1 = myCalc.plus( 5 , 6);
 		System.out.println("result1 : "+result1);
+		
+		// 4. divide 메소드 호출 
+		byte x = 10;
+		byte y = 4;
+		double result2 = myCalc.divide(x, y);
+		System.out.println("result2 : " + result2 );
+		
+		// 5. powerOff 메소드 호출 
+		myCalc.powerOff();
+		
 	}
 }
 
