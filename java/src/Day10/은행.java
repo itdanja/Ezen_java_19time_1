@@ -72,8 +72,37 @@ public class 은행 { // 슈퍼클래스[부모클래스]
 	}
 		// 3. 출금 메소드
 	public void 출금() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print(" 출금할 계좌번호 : ");		String 계좌번호 =scanner.next();
+		System.out.print(" 출금할 계좌비밀번호 : "); 	String 비밀번호 =scanner.next();
+		System.out.print(" 출금액: "); 				int 출금액 = scanner.nextInt();
+		// 1. 배열내 동일한 계좌번호 찾기
+		for( int i =0 ; i<Day10_3.계좌리스트.length ;i++) {
+			// 2. 해당 계좌가 동일한 비밀번호 맞는지 확인
+			if( Day10_3.계좌리스트[i].계좌번호.equals(계좌번호) ) {
+				// 3. 비밀번호가 맞으면 출금
+				if( Day10_3.계좌리스트[i].비밀번호.equals(비밀번호) ){
+					if( Day10_3.계좌리스트[i].예금액 < 출금액 ) { 	// 1. 계좌내 예금액보다 출금이 더 크면 출금 불가 
+						System.out.println(" 알림]] 잔액이 부족합니다. 잔액 : " + Day10_3.계좌리스트[i].예금액 );
+						return;
+					}else {										// 2. 계좌내 예금액보다 출금이 더 작거나 작으면 출금 가능 
+						System.out.println(" 알림]] 출금 완료!! ");
+						Day10_3.계좌리스트[i].예금액 -= 출금액;
+						System.out.println(" 알림]] 출금 후 잔액 : " + Day10_3.계좌리스트[i].예금액);
+						return;
+					}
+				}else {
+					System.out.println(" 알림]] 비밀번호가 다릅니다. [실패]");
+					return;
+				}
+			}
+			
+		}
+		// 그외 출금 실패
+		System.out.println(" 알림]] 동일한 계좌번호 정보가 없습니다.");
+		
 	}
-		// 4. 이체 메소드 
+		// 4. 이체 메소드 [ 다른 계좌로 입금처리 ]
 	public void 이체() {
 	}
 		// 5. 잔고 메소드 
