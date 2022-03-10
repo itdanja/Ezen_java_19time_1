@@ -104,12 +104,62 @@ public class 은행 { // 슈퍼클래스[부모클래스]
 	}
 		// 4. 이체 메소드 [ 다른 계좌로 입금처리 ]
 	public void 이체() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print(" 본인 계좌번호 : "); 	String 계좌번호 = scanner.next();
+		System.out.print(" 계좌 비밀번호 : "); 	String 비밀번호 = scanner.next();
+		System.out.print(" 상대방 계좌번호 : "); 	String 이체계좌번호 = scanner.next();
+		System.out.print(" 이체할 금액 : "); 		int 이체금액 = scanner.nextInt();
+		
+		for( int i = 0 ; i<Day10_3.계좌리스트.length ; i++ ) {
+			if( Day10_3.계좌리스트[i].계좌번호.equals(계좌번호) ) { // 1. 배열내 계좌중 동일한 계좌번호를 찾기 
+				if( Day10_3.계좌리스트[i].비밀번호.equals(비밀번호) ) { // 2. 동일한 계좌번호를 찾았으면 비밀번호 확인 
+					
+					for( int j = 0 ; j<Day10_3.계좌리스트.length ; j++ ) { 
+						if( Day10_3.계좌리스트[j].계좌번호.equals(이체계좌번호) ) {  // 3. 상대방 계좌번호가 찾기
+							if( Day10_3.계좌리스트[i].예금액 < 이체금액 ) {
+								System.out.println(" 알림]] 잔액이 부족합니다. [이체실패] "); return;
+							}else {
+								// 4. 상대방 계좌번호가 찾았으면 상대방 계좌번호에 금액을 넣고 내 계좌에서 금액 빼기 
+								Day10_3.계좌리스트[i].예금액 -= 이체금액; // 본인계좌 금액 차감 
+								Day10_3.계좌리스트[j].예금액 += 이체금액; // 상대방계좌 금액 추가 
+								System.out.println(" 알림]] 해당 계좌로 이체 성공 "); return;
+							}
+						}
+					}
+					System.out.println(" 알림]] 이체할수 없는 계좌번호 입니다. "); return;
+				}else { System.out.println(" 알림]] 비밀번호가 다릅니다."); return; }
+			}
+		}
+		System.out.println(" 알림]] 계좌번호 정보가 없습니다. [실패]] "); //그외
+		
 	}
 		// 5. 잔고 메소드 
 	public void 잔고() {
+		
+		
+		
 	}
 	
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
