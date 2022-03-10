@@ -135,8 +135,21 @@ public class 은행 { // 슈퍼클래스[부모클래스]
 	}
 		// 5. 잔고 메소드 
 	public void 잔고() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println(" 계좌번호 : ");	String 계좌번호 = scanner.next();
+		System.out.println(" 비밀번호 : ");	String 비밀번호 = scanner.next();
 		
-		
+		for( int i = 0 ; i<Day10_3.계좌리스트.length; i++ ) {
+			if( Day10_3.계좌리스트[i].계좌번호.equals(계좌번호) ) { // 1. 배열내 계좌중 동일한 계좌번호에 계좌 찾기
+				if( Day10_3.계좌리스트[i].비밀번호.equals(비밀번호) ) { // 2. 찾은 계좌에 비밀번호가 동일한지 체크 
+					// 3. 비밀번호가 동일하면 현재 예금정보를 출력
+					System.out.println(" 현 계좌 예금액 : " + Day10_3.계좌리스트[i].예금액 ); return;
+				}else {
+					System.out.println(" 알림]] 계좌정보가 다릅니다."); return;
+				}
+			}
+		}
+		System.out.println(" 알림]] 계좌정보가 없습니다. ");
 		
 	}
 	
