@@ -20,6 +20,7 @@ public class Day11_2 {
 					break;
 				case 2 :
 					System.out.println("앞오른쪽 금호타이어 교체");
+					car.frontRightTire = new KumhoTire("앞오른쪽", 13);
 					break;
 				case 3 : 
 					System.out.println("뒤왼쪽 한국타이어 교체");
@@ -27,6 +28,7 @@ public class Day11_2 {
 					break;
 				case 4 :
 					System.out.println("뒤오른쪽 금호타이어 교체");
+					car.backRightTire = new KumhoTire("뒤오른쪽", 17);
 					break;
 			}
 		
