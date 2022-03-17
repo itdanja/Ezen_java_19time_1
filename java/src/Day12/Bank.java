@@ -37,8 +37,6 @@ public class Bank { // 클래스선언
 			}
 		}catch( Exception e ) {}
 	}
-	
-
 	public void 파일저장() {
 		try {
 			// 1. 파일출력클래스
