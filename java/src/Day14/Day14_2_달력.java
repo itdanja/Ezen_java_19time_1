@@ -32,7 +32,7 @@ public class Day14_2_달력 {
 		
 			
 			//5. 출력
-			System.out.println("---------------------"+year+"년 "+month+"월 달력------------------");
+			System.out.println("\n\n=================="+year+"년 "+month+"월 달력 ====================");
 			System.out.println("일\t월\t화\t수\t목\t금\t토");
 			
 			//* 해당 월에 1일 출력전에 공백 채우기 
@@ -55,19 +55,34 @@ public class Day14_2_달력 {
 				swday++; // 요일 증가 
 			}
 			
+			System.out.println("\n====================================================");
+			
 			// 7. 메뉴 만들기 
 			System.out.print("\n\n 메뉴 : 1.이전달(◀) 2.다음달(▶) 3.검색 4.종료 : ");
 			int ch = scanner.nextInt();
-			if( ch == 1 ) {}
-			else if( ch == 2 ) {}
-			else if( ch == 3 ) {
+			if( ch == 1 ) { // 1번 입력시 
+				// 이전달 로 달력 출력코드 작성
+				month -= 1 ; 
+				// 만약에 0월 -> x   [  연도-=1 월=12  ]
+				if( month == 0 ) { year -= 1 ; month = 12; }
+			}
+			else if( ch == 2 ) {  // 2번 입력시 
+				// 다음달 로 달력 출력코드 작성
+				month += 1;
+				if( month == 13 ) { year += 1 ; month = 1; }
+			}
+			else if( ch == 3 ) {  // 3번 입력시 
 				// *추가 [ 입력받아서 출력 ]
-				System.out.print(" 검색할 연도 : "); 	year = scanner.nextInt();
-				System.out.print(" 검색할 월 : "); 	month = scanner.nextInt();
+				System.out.print(" 검색할 연도(0000) : "); 	year = scanner.nextInt();
+				System.out.print(" 검색할 월(00) : "); 	month = scanner.nextInt();
+				// *조건 [ 사용범위 : 연도 : 1900 ~ 2050 / 월 : 1~12 ]
+				if( year < 1900 || year > 2050 || month < 1 || month > 12  ) {
+					System.err.println("알림]] 표현할수 없는 달력 입니다.");
+					year = 달력.get(Calendar.YEAR);	 month = 달력.get(Calendar.DAY_OF_MONTH)+2;
+				}
 			}
 			else if( ch == 4 ) { System.err.println(" \n\n\t\t*** 달력프로그램 종료 *** "); break; }
-			else { System.err.println("알림]] 알수없는 번호입니다. ");}
-			
+			else { System.err.println("알림]] 알수없는 번호 입니다. ");}
 			
 		} // while end
 	} // 달력메소드 end 
