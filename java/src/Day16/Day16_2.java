@@ -26,10 +26,18 @@ public class Day16_2 {
 					+ list.get(i).제목+"\t"
 					+ list.get(i).작성자 ) ;
 		}
-		
+		//4.삭제
+		list.remove(2); // 2번 인덱스 삭제
+		System.out.println(" 2번 인덱스 삭제 후 : "+ list );
+		list.remove(3); // 3번 인덱스 삭제
+		System.out.println(" 3번 인덱스 삭제 후 : "+ list );
 		
 		
 		
 	}
 
 }
+
+
+
+
